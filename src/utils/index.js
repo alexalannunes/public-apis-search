@@ -22,4 +22,4 @@ export const formatParams = (params) => {
   return obj;
 };
 
-export const formatCategory = (str) => str.toLowerCase().replace(/\s/g, "-");
+export const formatCategory = (str = "") => (!str ? "" : str).toLowerCase().replace(/\s/g, "-");

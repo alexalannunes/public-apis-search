@@ -31,12 +31,12 @@ function App() {
     setApis(formatApis(apisMock));
 
     if (window.location.search) {
-      let params = {};
+      let paramsA = {};
       new URLSearchParams(window.location.search).forEach((value, key) => {
-        params[key] = value;
+        paramsA[key] = value;
       });
 
-      setParams(params);
+      setParams(paramsA);
     }
     const dew = {
       ...params,
@@ -49,6 +49,8 @@ function App() {
         const search = new URLSearchParams(window.location.search);
 
         const id = "public-apis-" + search.get("category");
+
+        setCategory(search.get("category"));
 
         const $anchor = document.getElementById(formatCategory(id));
 
@@ -77,8 +79,8 @@ function App() {
       <div>
         <div style={{ maxWidth: 960, width: "100%", margin: "0 auto 10px" }}>
           <div className="flex">
-            <Categories selectCategory={selectCategory} />
-            <div style={{ flex: 1, margin: "20px 10px 20px 20px" }}>
+            <Categories selectCategory={selectCategory} activeCategory={categorySelected} />
+            <div style={{ flex: 1, margin: "20px 10px 20px 20px", width: "calc(100% - 100px)" }}>
               <div>
                 <input type="text" placeholder="Search API name or description" />
                 <div style={{ marginTop: 20 }}>

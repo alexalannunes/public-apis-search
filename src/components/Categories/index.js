@@ -3,16 +3,28 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { categoriesMock } from "../../mock";
 import { formatCategory } from "../../utils";
 
-function Categories({ selectCategory }) {
+function Categories({ selectCategory, activeCategory = "" }) {
   return (
-    <div style={{ padding: "10px 0", borderRight: "1px solid #f0f0f0" }}>
+    <div style={{ padding: "10px 0", borderRight: "1px solid #f0f0f0", minWidth: 300 }}>
       <div style={{ position: "sticky", top: 0, height: "100vh", overflowY: "auto" }}>
-        <div onMouseDown={() => selectCategory("")}>All</div>
+        <div style={{ borderRadius: "100px 0 0 100px", display: "block", padding: "5px 10px", background: !activeCategory ? "#1967d2" : "transparent" }} onMouseDown={() => selectCategory("")}>
+          All
+        </div>
         {categoriesMock.map((i, x) => (
-          <AnchorLink href={`#public-apis-${formatCategory(i)}`} key={x}>
-            <div style={{ borderRadius: "100px 0 0 100px" }} onMouseDown={() => selectCategory(i)}>
-              {i}
-            </div>
+          <AnchorLink
+            onMouseDown={() => selectCategory(i)}
+            href={`#public-apis-${formatCategory(i)}`}
+            key={x}
+            style={{
+              fontWeight: "500",
+              color: "#333",
+              borderRadius: "100px 0 0 100px",
+              display: "block",
+              padding: "5px 10px",
+              background: formatCategory(activeCategory) === formatCategory(i) ? "#1967d2" : "transparent",
+            }}
+          >
+            {i}
           </AnchorLink>
         ))}
       </div>
