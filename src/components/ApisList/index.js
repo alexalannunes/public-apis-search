@@ -9,39 +9,49 @@ const ApiListTitle = ({ category }) => (
 );
 
 function ApisList({ apis }) {
-  return (
-    <>
-      {apis.map((i, a) => (
-        <div key={a} style={{ marginBottom: 30 }}>
-          <ApiListTitle category={i.Category} />
-          <div style={{ background: "#fff", marginTop: 0 }}>
-            <table>
-              <thead>
-                <tr>
-                  <th>API</th>
-                  <th>Description</th>
-                  <th>Auth</th>
-                  <th>HTTPS</th>
-                  <th>CORS</th>
-                </tr>
-              </thead>
-              <tbody>
-                {i.apis.map((api, xx) => (
-                  <tr key={xx}>
-                    <td>{api.API}</td>
-                    <td>{api.Description}</td>
-                    <td>{api.Auth}</td>
-                    <td>{api.HTTPS ? "Yes" : "No"}</td>
-                    <td>{api.Cors}</td>
+  let ResultApis = null;
+
+  if (!apis) {
+    ResultApis = () => <div>Loading...</div>;
+  } else if (apis && apis.length === 0) {
+    ResultApis = () => <div>No apis</div>;
+  } else {
+    ResultApis = () => (
+      <>
+        {apis.map((i, a) => (
+          <div key={a} style={{ marginBottom: 30 }}>
+            <ApiListTitle category={i.Category} />
+            <div style={{ background: "#fff", marginTop: 0 }}>
+              <table>
+                <thead>
+                  <tr>
+                    <th>API</th>
+                    <th>Description</th>
+                    <th>Auth</th>
+                    <th>HTTPS</th>
+                    <th>CORS</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {i.apis.map((api, xx) => (
+                    <tr key={xx}>
+                      <td>{api.API}</td>
+                      <td>{api.Description}</td>
+                      <td>{api.Auth}</td>
+                      <td>{api.HTTPS ? "Yes" : "No"}</td>
+                      <td>{api.Cors}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
-      ))}
-    </>
-  );
+        ))}
+      </>
+    );
+  }
+
+  return <ResultApis />;
 }
 
 export default ApisList;

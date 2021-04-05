@@ -29,7 +29,7 @@ function App() {
         <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto 10px" }}>
           <div className="flex">
             <Categories selectCategory={selectCategory} activeCategory={categorySelected} />
-            <ContentApis apis={apisMock} />
+            <ContentApis apis={apis} />
             <Filters selectFilter={selectFilter} params={params} />
           </div>
         </div>

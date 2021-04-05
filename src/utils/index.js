@@ -1,5 +1,7 @@
 import _ from "lodash";
 export const formatApis = (apis) => {
+  console.log(apis);
+
   const example = apis.entries;
   const keys_ = _.groupBy(example, "Category");
   const f = Object.keys(keys_).map((i) => {
@@ -10,7 +12,10 @@ export const formatApis = (apis) => {
     };
   });
 
-  return f;
+  return {
+    data: f,
+    count: apis.count,
+  };
 };
 export const formatParams = (params) => {
   let obj = { ...params };
