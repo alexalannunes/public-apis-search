@@ -4,7 +4,7 @@ import React from "react";
 
 function Filters({ params, selectFilter }) {
   return (
-    <>
+    <div className="flex column" style={{ flex: 1 }}>
       <button>reset</button>
       <select placeholder="Auth" defaultValue="" onChange={selectFilter} value={params.auth} name="auth">
         <option value="">Auth</option>
@@ -23,7 +23,7 @@ function Filters({ params, selectFilter }) {
         <option value="true">Yes</option>
         <option value="false">No</option>
       </select>
-    </>
+    </div>
   );
 }
 
