@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { formatApis } from "./utils";
-import { apisMock } from "./mock";
-import "./App.css";
 import { Categories, ContentApis, Fab, Filters, Footer } from "./components";
 import { api } from "./services/api";
+import "./App.css";
 
 async function temp(params = "") {
   const req = "/entries" + (params ? "?" + params : "");
