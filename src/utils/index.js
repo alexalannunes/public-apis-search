@@ -1,4 +1,9 @@
 import _ from "lodash";
+
+/**
+ * recebe apis e retorna agrupado por categoria
+ * @param {Object} apis
+ */
 export const formatApis = (apis) => {
   const example = apis.entries;
   const keys_ = _.groupBy(example, "Category");
@@ -9,6 +14,9 @@ export const formatApis = (apis) => {
       length: keys_[i].length,
     };
   });
+
+  // try this
+  // console.log({ data: f, count: apis.count });
 
   return {
     data: f,
