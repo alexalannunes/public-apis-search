@@ -3,6 +3,13 @@ import { formatApis } from "./utils";
 import { apisMock } from "./mock";
 import "./App.css";
 import { Categories, ContentApis, Fab, Filters, Footer } from "./components";
+import { api } from "./services/api";
+
+async function temp(params = "") {
+  const req = "/entries" + (params ? "?" + params : "");
+  const r = await api.get(req);
+  return r.data;
+}
 
 function App() {
   const [apis, setApis] = useState([]);
@@ -20,8 +27,18 @@ function App() {
   };
 
   useEffect(() => {
-    setApis(formatApis(apisMock));
+    temp().then((data) => {
+      setApis(formatApis(data));
+    });
   }, []);
+
+  useEffect(() => {
+    const query = new URLSearchParams(params).toString();
+    console.log(query);
+    temp(query).then((data) => {
+      setApis(formatApis(data));
+    });
+  }, [params]);
 
   return (
     <div>
