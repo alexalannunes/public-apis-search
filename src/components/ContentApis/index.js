@@ -4,7 +4,7 @@ import ApisList from "../ApisList";
 
 function ContentApis({ apis }) {
   return (
-    <div style={{ flex: 2, margin: "20px 10px 20px 20px", background: "red" }}>
+    <div style={{ flex: 3, margin: "20px 10px 20px 20px", width: 700 }}>
       <div>
         <input type="text" placeholder="Search API name or description" />
         <div style={{ marginTop: 20 }}></div>

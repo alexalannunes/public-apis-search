@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { formatApis } from "./utils";
 import { apisMock } from "./mock";
 import "./App.css";
-import { Categories, ContentApis, Filters } from "./components";
+import { Categories, ContentApis, Fab, Filters, Footer } from "./components";
 
 function App() {
   const [apis, setApis] = useState([]);
@@ -34,18 +34,8 @@ function App() {
           </div>
         </div>
       </div>
-      <div style={{ background: "#fff" }}>Footer</div>
-      <button
-        onClick={() => {
-          window.scroll({
-            top: 0,
-            behavior: "smooth",
-          });
-        }}
-        style={{ position: "fixed", right: 20, bottom: 20 }}
-      >
-        ^
-      </button>
+      <Footer />
+      <Fab />
     </div>
   );
 }

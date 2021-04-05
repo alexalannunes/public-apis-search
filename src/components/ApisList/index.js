@@ -22,24 +22,28 @@ function ApisList({ apis }) {
         <div key={a} style={{ marginBottom: 30 }}>
           <ApiListTitle category={i.Category} />
           <div style={{ background: "#fff", marginTop: 0 }}>
-            {i.apis.map((api, xx) => (
-              <div style={{ marginBottom: 10 }} key={xx} size="small">
-                <div className="flex ai-center">
-                  <a rel="noreferrer" href={api.Link} target="_blank">
-                    <strong>{api.API}</strong>
-                  </a>
-                  <span style={{ margin: "0 10px" }}> &bull;</span>
-                  <p style={{ color: "#777", overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>{api.Description}</p>
-                </div>
-                <div style={{ color: "#606060" }}>
-                  <small>
-                    {api.Auth && <ApiBadgeProps name="Auth" value={api.Auth} />}
-                    {api.Cors && <ApiBadgeProps name="Cors" value={api.Cors} />}
-                    {api.HTTPS && <ApiBadgeProps showName={false} value={api.HTTPS ? "HTTPS" : ""} />}
-                  </small>
-                </div>
-              </div>
-            ))}
+            <table>
+              <thead>
+                <tr>
+                  <th>API</th>
+                  <th>Description</th>
+                  <th>Auth</th>
+                  <th>HTTPS</th>
+                  <th>CORS</th>
+                </tr>
+              </thead>
+              <tbody>
+                {i.apis.map((api, xx) => (
+                  <tr key={xx}>
+                    <td>{api.API}</td>
+                    <td>{api.Description}</td>
+                    <td>{api.Auth}</td>
+                    <td>{api.HTTPS ? "Yes" : "No"}</td>
+                    <td>{api.Cors}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       ))}
