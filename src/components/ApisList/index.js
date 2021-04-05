@@ -8,13 +8,6 @@ const ApiListTitle = ({ category }) => (
   </h3>
 );
 
-const ApiBadgeProps = ({ name, value, showName = true }) => (
-  <span style={{ padding: "3px 7px", marginRight: 5, border: "1px solid #ccc", borderRadius: 100 }}>
-    {showName && <span>{name}: </span>}
-    <span style={{ fontWeight: "500" }}>{value}</span>
-  </span>
-);
-
 function ApisList({ apis }) {
   return (
     <>
