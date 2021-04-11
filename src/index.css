@@ -1,5 +1,6 @@
 * {
   font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
 body {
   margin: 0;
@@ -16,6 +17,7 @@ html,
 body,
 #root {
   height: 100%;
+  color: #333;
 }
 
 a {
