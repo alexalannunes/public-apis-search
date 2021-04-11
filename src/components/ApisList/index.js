@@ -22,7 +22,7 @@ function ApisList({ apis }) {
           <div key={a} style={{ marginBottom: 30 }}>
             <ApiListTitle category={i.Category} />
             <div style={{ background: "#fff", marginTop: 0 }}>
-              <table>
+              <table border={1} style={{ borderCollapse: "collapse" }}>
                 <thead>
                   <tr>
                     <th>API</th>
@@ -35,7 +35,11 @@ function ApisList({ apis }) {
                 <tbody>
                   {i.apis.map((api, xx) => (
                     <tr key={xx}>
-                      <td>{api.API}</td>
+                      <td>
+                        <a href={api.Link} target="_blank" rel="noreferrer">
+                          {api.API}
+                        </a>
+                      </td>
                       <td>{api.Description}</td>
                       <td>{api.Auth}</td>
                       <td>{api.HTTPS ? "Yes" : "No"}</td>

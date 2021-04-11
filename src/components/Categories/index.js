@@ -20,10 +20,10 @@ function Categories({ selectCategory, activeCategory = "" }) {
             key={x}
             style={{
               fontWeight: "500",
-              color: "#333",
               borderRadius: "100px 0 0 100px",
               display: "block",
               padding: "5px 10px",
+              color: formatCategory(activeCategory) === formatCategory(i) ? "#fff" : "#333",
               background: formatCategory(activeCategory) === formatCategory(i) ? "#1967d2" : "transparent",
             }}
           >
