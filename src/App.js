@@ -11,6 +11,7 @@ async function temp(params = "") {
 }
 
 function App() {
+  const [loading, setLoading] = useState(false);
   const [apis, setApis] = useState([]);
   const [params, setParams] = useState({});
   const [categorySelected, setCategory] = useState("");
@@ -26,10 +27,12 @@ function App() {
   };
 
   useEffect(() => {
+    setLoading(true);
     const query = new URLSearchParams(params).toString();
     console.log(query);
     temp(query).then((data) => {
       setApis(formatApis(data));
+      setLoading(false);
     });
   }, [params]);
 
@@ -39,7 +42,7 @@ function App() {
         <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto 10px" }}>
           <div className="flex">
             <Categories selectCategory={selectCategory} activeCategory={categorySelected} />
-            <ContentApis apis={apis} />
+            <ContentApis apis={apis} loading={loading} />
             <Filters selectFilter={selectFilter} params={params} />
           </div>
         </div>

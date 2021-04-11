@@ -22,7 +22,7 @@ function ApisList({ apis }) {
           <div key={a} style={{ marginBottom: 30 }}>
             <ApiListTitle category={i.Category} />
             <div style={{ background: "#fff", marginTop: 0 }}>
-              <table border={1} style={{ borderCollapse: "collapse" }}>
+              <table border={1} style={{ borderCollapse: "collapse", width: "100%" }}>
                 <thead>
                   <tr>
                     <th>API</th>
