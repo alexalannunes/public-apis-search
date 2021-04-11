@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerHeader } from "../../globals/ContainerHeader";
+import { ContainerHeader } from "../../globals";
 import ApisList from "../ApisList";
 
 function ContentApis({ apis, loading, selectFilter, params }) {

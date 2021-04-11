@@ -1,12 +1,6 @@
 import React from "react";
+import { Card } from "../../globals";
 import { formatCategory } from "../../utils";
-
-const ApiListTitle = ({ category }) => (
-  <h3 id={`public-apis-${formatCategory(category)}`} style={{ position: "relative" }}>
-    <span style={{ fontWeight: "500", background: "#fff", padding: "0 20px 0 0" }}>{category}</span>
-    <div style={{ width: "100%", position: "absolute", height: 1, background: "#ccc", bottom: "calc(50% - 1px)", zIndex: -1 }}></div>
-  </h3>
-);
 
 function ApisList({ apis }) {
   let ResultApis = null;
@@ -19,14 +13,20 @@ function ApisList({ apis }) {
     ResultApis = () => (
       <>
         {apis.map((i, a) => (
-          <div key={a} style={{ marginBottom: 30 }}>
-            <ApiListTitle category={i.Category} />
+          <Card key={a} id={`public-apis-${formatCategory(i.Category)}`}>
+            <div className="card-header">
+              <h3 className="m-0">
+                <span style={{ fontWeight: "500", background: "#fff" }}>{i.Category}</span>
+                <span style={{ margin: "0 5px", color: "#ccc" }}>&bull;</span>
+                <strong style={{ color: "#555", fontWeight: "400", fontSize: 17 }}>{i.length}</strong>
+              </h3>
+            </div>
             <div style={{ background: "#fff", marginTop: 0 }}>
-              <table border={1} style={{ borderCollapse: "collapse", width: "100%" }}>
+              <table style={{ borderCollapse: "collapse", width: "100%" }}>
                 <thead>
                   <tr>
-                    <th>API</th>
-                    <th>Description</th>
+                    <th className="text-left">API</th>
+                    <th className="text-left">Description</th>
                     <th>Auth</th>
                     <th>HTTPS</th>
                     <th>CORS</th>
@@ -40,16 +40,16 @@ function ApisList({ apis }) {
                           {api.API}
                         </a>
                       </td>
-                      <td>{api.Description}</td>
-                      <td>{api.Auth}</td>
-                      <td>{api.HTTPS ? "Yes" : "No"}</td>
-                      <td>{api.Cors}</td>
+                      <td className="api-description-td">{api.Description}</td>
+                      <td className="text-center capitalize">{api.Auth ? <span>{api.Auth}</span> : <span style={{ color: "#888" }}>--</span>}</td>
+                      <td className="text-center capitalize">{api.HTTPS ? "Yes" : "No"}</td>
+                      <td className="text-center capitalize">{api.Cors}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-          </div>
+          </Card>
         ))}
       </>
     );

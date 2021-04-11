@@ -1,6 +1,6 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { ContainerHeader } from "../../globals/ContainerHeader";
+import { ContainerHeader } from "../../globals";
 import { categoriesMock } from "../../mock";
 import { formatCategory } from "../../utils";
 

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { formatApis } from "./utils";
 import { Categories, ContentApis, Fab, Footer } from "./components";
 import { api } from "./services/api";
-import "./App.css";
 import { apisMock } from "./mock";
 
 async function temp(params = "") {
