@@ -4,7 +4,7 @@ import React from "react";
 
 function Filters({ params, selectFilter }) {
   return (
-    <div style={{ flex: 1, minWidth: 180, maxWidth: 200 }} className="flex column">
+    <div style={{ flex: 1, minWidth: 180, maxWidth: 200, borderLeft: "1px solid #ccc" }} className="flex column">
       <div className="flex column" style={{ position: "sticky", top: 0 }}>
         <button>reset</button>
         <select placeholder="Auth" defaultValue="" onChange={selectFilter} value={params.auth} name="auth">
