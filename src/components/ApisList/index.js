@@ -18,10 +18,10 @@ function ApisList({ apis }) {
               <h3 className="m-0">
                 <span style={{ fontWeight: "500", background: "#fff" }}>{i.Category}</span>
                 <span style={{ margin: "0 5px", color: "#ccc" }}>&bull;</span>
-                <strong style={{ color: "#555", fontWeight: "400", fontSize: 17 }}>{i.length}</strong>
+                <strong style={{ color: "#777", fontWeight: "500", fontSize: 15 }}>{i.length}</strong>
               </h3>
             </div>
-            <div style={{ background: "#fff", marginTop: 0 }}>
+            <div className="p-horizontal-5">
               <table style={{ borderCollapse: "collapse", width: "100%" }}>
                 <thead>
                   <tr>

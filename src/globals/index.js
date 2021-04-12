@@ -1,13 +1,26 @@
 import styled from "styled-components";
 
-export const ContainerHeader = styled.div`
+export const Header = styled.div`
   border-bottom: 1px solid #ccc;
-  padding: 13px 15px;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background: #fff;
   display: flex;
   align-items: center;
-  font-weight: 500;
-  font-size: 18;
+
+  .header-categories-title {
+    padding: 0 var(--size20px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: var(--categories-width);
+    border-right: 1px solid #ccc;
+    font-weight: 500;
+    font-size: 18px;
+  }
 `;
 
 export const Card = styled.div`
