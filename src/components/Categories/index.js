@@ -1,35 +1,64 @@
-import React from "react";
+import React, { Children } from "react";
 import { categoriesMock } from "../../mock";
 import { formatCategory } from "../../utils";
+import CategoryItem from "./CategoryItem";
 import { CategoriesContainer } from "./styles";
 
 function isActive(activeCategory, categoryItem) {
   return formatCategory(activeCategory) === formatCategory(categoryItem);
 }
 
-function Categories({ selectCategory, activeCategory = "" }) {
+function scrollTo(y) {
+  window.scroll({
+    top: y,
+    behavior: "smooth",
+  });
+}
+
+function Categories() {
+  const [category, setCategory] = React.useState("");
+
+  const onSelectCategory = React.useCallback((categoryItem) => {
+    let scroll = 0;
+    if (categoryItem) {
+      const id = `public-apis-${categoryItem}`;
+      const cardItem = document.getElementById(id);
+      scroll = cardItem.offsetTop - 68;
+    }
+
+    scrollTo(scroll);
+
+    setCategory(categoryItem);
+  }, []);
+
   return (
     <CategoriesContainer>
       <ul>
-        <li>
-          <span>All</span>
-        </li>
+        <CategoryItem>
+          <span
+            onClick={() => {
+              onSelectCategory("");
+            }}
+            className={!category ? `active` : ""}
+          >
+            All
+          </span>
+        </CategoryItem>
         {categoriesMock.map((i, x) => (
-          <li key={x}>
+          <CategoryItem key={formatCategory(i)}>
             <span
-              onMouseDown={() => {
-                selectCategory(i);
+              onClick={() => {
+                onSelectCategory(formatCategory(i));
               }}
-              data-href={`#public-apis-${formatCategory(i)}`}
-              className={isActive(activeCategory, i) ? "active" : ""}
+              className={isActive(category, i) ? "active" : ""}
             >
               {i}
             </span>
-          </li>
+          </CategoryItem>
         ))}
       </ul>
     </CategoriesContainer>
   );
 }
 
-export default Categories;
+export default React.memo(Categories);

@@ -15,12 +15,6 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [apis, setApis] = useState([]);
   const [params, setParams] = useState({});
-  const [categorySelected, setCategory] = useState("");
-
-  const selectCategory = (category) => {
-    console.log(category);
-    setCategory(category);
-  };
 
   const selectFilter = (e) => {
     setParams((oldParams) => {
@@ -74,7 +68,7 @@ function App() {
       <div>
         <div style={{ width: "100%" }}>
           <div className="flex">
-            <Categories selectCategory={selectCategory} activeCategory={categorySelected} />
+            <Categories />
             <ContentApis apis={apis} loading={loading} selectFilter={selectFilter} params={params} />
           </div>
         </div>
