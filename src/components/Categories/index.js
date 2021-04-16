@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import { categoriesMock } from "../../mock";
 import { formatCategory } from "../../utils";
 import CategoryItem from "./CategoryItem";

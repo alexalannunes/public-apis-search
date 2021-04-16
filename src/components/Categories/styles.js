@@ -22,15 +22,19 @@ export const CategoriesContainer = styled.aside`
     transition: all 0.2s ease-in;
     cursor: pointer;
     font-weight: 500;
+    border: 1px solid transparent;
 
     &:hover {
-      background: #ddd;
+      background: #ddeff8;
       color: #222;
+      border: 1px solid #81c1e0;
+      color: #08c;
     }
   }
 
   ul li span.active {
-    color: #222;
-    background: #ddd;
+    color: #08c;
+    background: #ddeff8;
+    border: 1px solid #81c1e0;
   }
 `;

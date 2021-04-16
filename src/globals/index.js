@@ -21,6 +21,42 @@ export const Header = styled.div`
     font-weight: 500;
     font-size: 18px;
   }
+
+  .header-form-filters {
+    padding-left: var(--size20px);
+
+    input {
+      width: 300px;
+      padding: 16px 20px;
+      transition: all 0.2s;
+    }
+
+    select {
+      padding: 7.5px;
+      box-sizing: border-box;
+    }
+
+    input,
+    select {
+      font-weight: 500;
+      margin-right: var(--size20px);
+    }
+  }
+
+  .header-apis-total {
+    font-weight: 500;
+    border-radius: 14px;
+    background: #ddeff8;
+    border: 1px solid #81c1e0;
+    padding: 5px 10px;
+    color: #08c;
+
+    span {
+      color: #08c;
+      font-weight: 400;
+      margin-left: 5px;
+    }
+  }
 `;
 
 export const Card = styled.div`

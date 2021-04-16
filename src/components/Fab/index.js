@@ -1,18 +1,19 @@
 import React from "react";
+import { FABButton } from "./styles";
+import chevronTop from "../../assets/expand_less_black_24dp.svg";
 
 function Fab() {
   return (
-    <button
+    <FABButton
       onClick={() => {
         window.scroll({
           top: 0,
           behavior: "smooth",
         });
       }}
-      style={{ position: "fixed", right: 20, bottom: 20 }}
     >
-      ^
-    </button>
+      <img src={chevronTop} alt="back" />
+    </FABButton>
   );
 }
 
