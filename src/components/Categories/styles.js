@@ -5,9 +5,9 @@ export const CategoriesContainer = styled.aside`
   left: 0;
   bottom: 0;
   top: var(--header-height);
-  background: var(--bg);
+  background: #fff;
   width: var(--categories-width);
-  padding: 10px 5px;
+  padding: 10px 0px;
   overflow-y: scroll;
 
   ul {
@@ -18,7 +18,7 @@ export const CategoriesContainer = styled.aside`
   ul li span {
     display: block;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 0 100px 100px 0;
     transition: all 0.2s ease-in;
     cursor: pointer;
     font-weight: 500;

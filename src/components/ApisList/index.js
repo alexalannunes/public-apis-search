@@ -15,11 +15,9 @@ function ApisList({ apis }) {
         {apis.map((i, a) => (
           <Card key={a} id={`public-apis-${formatCategory(i.Category)}`}>
             <div className="card-header">
-              <h3 className="m-0">
-                <span style={{ fontWeight: "500", background: "#fff" }}>{i.Category}</span>
-                <span style={{ margin: "0 5px", color: "#ccc" }}>&bull;</span>
-                <strong style={{ color: "#777", fontWeight: "500", fontSize: 15 }}>{i.length}</strong>
-              </h3>
+              <div className="api-count-container">{i.length}</div>
+
+              <h3 className="m-0 card-title">{i.Category}</h3>
             </div>
             <div className="p-horizontal-5">
               <table style={{ borderCollapse: "collapse", width: "100%" }}>

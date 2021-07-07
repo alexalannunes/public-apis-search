@@ -67,9 +67,26 @@ export const Card = styled.div`
   padding-bottom: 10px;
 
   .card-header {
-    padding: 10px 15px;
+    padding: 15px 15px 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
+    .api-count-container {
+      width: 33px;
+      height: 33px;
+      border-radius: 100px;
+      background: #ddeff8;
+      color: #08c !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .card-title {
+      font-weight: 500;
+    }
   }
 `;
