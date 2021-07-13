@@ -1,22 +1,17 @@
 import React from "react";
 import { categoriesMock } from "../../mock";
 import { formatCategory } from "../../utils";
-import CategoryItem from "./CategoryItem";
+import CategoryItem from "./Category";
 import { CategoriesContainer } from "./styles";
 
-function isActive(activeCategory, categoryItem) {
+import styles from "./index.module.css";
+
+export function isActive(activeCategory, categoryItem) {
   return formatCategory(activeCategory) === formatCategory(categoryItem);
 }
 
-function scrollTo(y) {
-  window.scroll({
-    top: y,
-    behavior: "smooth",
-  });
-}
-
 function Categories() {
-  const [category, setCategory] = React.useState("");
+  const [categorySelected, setCategorySelected] = React.useState("");
 
   const onSelectCategory = React.useCallback((categoryItem) => {
     let scroll = 0;
@@ -28,36 +23,31 @@ function Categories() {
 
     scrollTo(scroll);
 
-    setCategory(categoryItem);
+    setCategorySelected(categoryItem);
   }, []);
 
+  React.useEffect(() => {
+    // context this
+    setCategorySelected(categoriesMock[0]);
+  }, []);
+
+  function scrollTo(y) {
+    window.scroll({
+      top: y,
+      behavior: "smooth",
+    });
+  }
+
   return (
-    <CategoriesContainer>
+    <aside className={styles.categoriesContainer}>
       <ul>
-        <CategoryItem>
-          <span
-            onClick={() => {
-              onSelectCategory("");
-            }}
-            className={!category ? `active` : ""}
-          >
-            All
-          </span>
-        </CategoryItem>
-        {categoriesMock.map((i, x) => (
-          <CategoryItem key={formatCategory(i)}>
-            <span
-              onClick={() => {
-                onSelectCategory(formatCategory(i));
-              }}
-              className={isActive(category, i) ? "active" : ""}
-            >
-              {i}
-            </span>
+        {categoriesMock.map((category, x) => (
+          <CategoryItem key={formatCategory(category)} onSelectCategory={onSelectCategory} category={category} selected={categorySelected}>
+            {category}
           </CategoryItem>
         ))}
       </ul>
-    </CategoriesContainer>
+    </aside>
   );
 }
 

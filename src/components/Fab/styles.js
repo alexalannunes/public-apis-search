@@ -13,6 +13,11 @@ export const FABButton = styled.button`
   cursor: pointer;
   outline: none;
   transition: transform 0.2s;
+  transform: scale(0);
+
+  &.active {
+    transform: scale(1);
+  }
 
   &:active {
     transform: scale(0.9);
