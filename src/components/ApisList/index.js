@@ -16,7 +16,6 @@ function ApisList({ apis }) {
           <Card key={a} id={`public-apis-${formatCategory(i.Category)}`}>
             <div className="card-header">
               <div className="api-count-container">{i.length}</div>
-
               <h3 className="m-0 card-title">{i.Category}</h3>
             </div>
             <div className="p-horizontal-5">

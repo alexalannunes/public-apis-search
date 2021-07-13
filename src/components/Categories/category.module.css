@@ -21,18 +21,10 @@
   transition: all 0.2s ease-in;
   cursor: pointer;
   font-weight: 500;
-  border: 1px solid transparent;
 }
 
-.categoriesContainer ul li span:hover {
+.categoriesContainer ul li span:hover,
+.categoryItemActive {
   background: #ddeff8;
-  color: #222;
-  border: 1px solid #81c1e0;
   color: #08c;
-}
-
-.categoriesContainer ul li span.active {
-  color: #08c;
-  background: #ddeff8;
-  border: 1px solid #81c1e0;
 }

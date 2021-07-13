@@ -3,11 +3,7 @@ import { categoriesMock } from "../../mock";
 import { formatCategory, scrollToElement } from "../../utils";
 
 import CategoryItem from "./Category";
-import styles from "./index.module.css";
-
-export function isActive(activeCategory, categoryItem) {
-  return formatCategory(activeCategory) === formatCategory(categoryItem);
-}
+import styles from "./category.module.css";
 
 function Categories() {
   const [categorySelected, setCategorySelected] = React.useState("");
