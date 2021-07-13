@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { formatApis } from "./utils";
-import { Categories, ContentApis, Fab, Footer } from "./components";
+import { Categories, ContentApis, Fab } from "./components";
 import { api } from "./services/api";
 import { apisMock } from "./mock";
 import { Header } from "./globals";
@@ -69,7 +69,7 @@ function App() {
           <span>apis</span>
         </div>
 
-        {loading && <span>loading</span>}
+        <div style={{ margin: 20 }}>{loading && <span>loading</span>}</div>
       </Header>
       <div>
         <div style={{ width: "100%" }}>
@@ -79,7 +79,6 @@ function App() {
           </div>
         </div>
       </div>
-      <Footer />
       <Fab />
     </div>
   );

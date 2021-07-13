@@ -1,9 +1,5 @@
 import _ from "lodash";
 
-/**
- * recebe apis e retorna agrupado por categoria
- * @param {Object} apis
- */
 export const formatApis = (apis) => {
   const example = apis.entries;
   const keys_ = _.groupBy(example, "Category");
@@ -23,6 +19,7 @@ export const formatApis = (apis) => {
     count: apis.count,
   };
 };
+
 export const formatParams = (params) => {
   let obj = { ...params };
 
@@ -34,3 +31,7 @@ export const formatParams = (params) => {
 };
 
 export const formatCategory = (str = "") => (!str ? "" : str).toLowerCase().replace(/\s/g, "-");
+
+export const scrollToElement = (y) => {
+  window.scroll({ top: y, behavior: "smooth" });
+};

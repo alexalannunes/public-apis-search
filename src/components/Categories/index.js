@@ -1,9 +1,8 @@
 import React from "react";
 import { categoriesMock } from "../../mock";
-import { formatCategory } from "../../utils";
-import CategoryItem from "./Category";
-import { CategoriesContainer } from "./styles";
+import { formatCategory, scrollToElement } from "../../utils";
 
+import CategoryItem from "./Category";
 import styles from "./index.module.css";
 
 export function isActive(activeCategory, categoryItem) {
@@ -20,23 +19,13 @@ function Categories() {
       const cardItem = document.getElementById(id);
       scroll = cardItem.offsetTop - 68;
     }
-
-    scrollTo(scroll);
-
+    scrollToElement(scroll);
     setCategorySelected(categoryItem);
   }, []);
 
   React.useEffect(() => {
-    // context this
     setCategorySelected(categoriesMock[0]);
   }, []);
-
-  function scrollTo(y) {
-    window.scroll({
-      top: y,
-      behavior: "smooth",
-    });
-  }
 
   return (
     <aside className={styles.categoriesContainer}>

@@ -5,6 +5,8 @@
   --categories-width: 290px;
   --size15px: 15px;
   --size20px: 20px;
+
+  --primary: #008ed7;
 }
 * {
   font-family: "Roboto", sans-serif;
@@ -151,10 +153,10 @@ td:last-child {
   border-radius: 30px;
 }
 ::-webkit-scrollbar-track-piece {
-  background-color: var(--bg);
+  background-color: #fff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #ccc;
+  background: #e5e5e5;
   border-radius: 30px;
 }
 .api-description-td {
