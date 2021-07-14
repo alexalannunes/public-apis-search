@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { formatCategory } from "../../utils";
+import { formatCategory } from "../../../utils";
 
 import styles from "./category.module.css";
 

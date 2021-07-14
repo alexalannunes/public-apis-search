@@ -1,6 +1,6 @@
 import React from "react";
-import { Card } from "../../globals";
-import { formatCategory } from "../../utils";
+import { Card } from "../../../globals";
+import { formatCategory } from "../../../utils";
 
 function ApisList({ apis }) {
   let ResultApis = null;

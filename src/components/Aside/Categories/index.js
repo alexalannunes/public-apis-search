@@ -1,6 +1,6 @@
 import React from "react";
-import { categoriesMock } from "../../mock";
-import { formatCategory, scrollToElement } from "../../utils";
+import { categoriesMock } from "../../../mock";
+import { formatCategory, scrollToElement } from "../../../utils";
 
 import CategoryItem from "./Category";
 import styles from "./category.module.css";
