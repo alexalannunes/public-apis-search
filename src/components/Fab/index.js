@@ -1,8 +1,7 @@
 import React from "react";
-import { FABButton } from "./styles";
 import chevronTop from "../../assets/expand_less_black_24dp.svg";
 
-const activeClass = "active";
+import styles from "./styles.module.css";
 
 function Fab() {
   const fabButtonRef = React.useRef();
@@ -10,9 +9,9 @@ function Fab() {
   React.useEffect(() => {
     function onScroll(event) {
       if (this.scrollY > 300) {
-        fabButtonRef.current.classList.add(activeClass);
+        fabButtonRef.current.classList.add(styles.fabButtonActive);
       } else {
-        fabButtonRef.current.classList.remove(activeClass);
+        fabButtonRef.current.classList.remove(styles.fabButtonActive);
       }
     }
 
@@ -22,7 +21,8 @@ function Fab() {
   }, []);
 
   return (
-    <FABButton
+    <button
+      className={styles.fabButton}
       ref={fabButtonRef}
       onClick={() => {
         window.scroll({
@@ -32,7 +32,7 @@ function Fab() {
       }}
     >
       <img src={chevronTop} alt="back" />
-    </FABButton>
+    </button>
   );
 }
 
