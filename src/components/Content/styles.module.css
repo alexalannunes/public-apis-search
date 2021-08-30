@@ -1,0 +1,5 @@
+.content {
+  width: calc(100% - var(--categories-width));
+  margin-left: var(--categories-width);
+  background: red;
+}

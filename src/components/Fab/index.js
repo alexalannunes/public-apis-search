@@ -36,4 +36,4 @@ function Fab() {
   );
 }
 
-export default Fab;
+export { Fab };

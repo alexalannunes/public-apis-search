@@ -1,0 +1,8 @@
+.side {
+  width: var(--categories-width);
+  border-right: 1px solid #ccc;
+  position: fixed;
+  top: var(--header-height);
+  bottom: 0;
+  background: #ddd;
+}

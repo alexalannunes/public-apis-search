@@ -1,5 +1,6 @@
-import Categories from "./Aside/Categories";
-import ContentApis from "./Content/ContentApis";
-import Fab from "./Fab";
+import { Fab } from "./Fab";
+import { Header } from "./Header";
+import { Side } from "./Side";
+import { Content } from "./Content";
 
-export { Categories, ContentApis, Fab };
+export { Fab, Header, Side, Content };

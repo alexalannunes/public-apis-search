@@ -1,7 +1,7 @@
 :root {
   --bg: #f0f2f5;
   --shadow: rgba(0, 0, 0, 0.3);
-  --header-height: 50px;
+  --header-height: 60px;
   --categories-width: 290px;
   --size15px: 15px;
   --size20px: 20px;
@@ -99,14 +99,6 @@ a:hover {
   padding-right: 5px;
 }
 
-input,
-select {
-  padding: 5px 9px;
-  border-radius: 5px;
-  border: 1px solid #dedede;
-  background: #fff;
-}
-
 .text-left {
   text-align: left;
 }
@@ -118,36 +110,7 @@ select {
 .capitalize {
   text-transform: capitalize;
 }
-table {
-  font-size: 15px;
-}
-table a {
-  font-weight: 500;
-}
-th,
-td {
-  padding: 10px 15px;
-}
-th {
-  color: #777;
-  font-weight: 500;
-}
 
-tr {
-  transition: background 0.2s ease-in;
-  will-change: background;
-}
-tbody tr:hover {
-  background: var(--bg);
-}
-
-td:first-child {
-  border-radius: 8px 0 0 8px;
-}
-
-td:last-child {
-  border-radius: 0 8px 8px 0;
-}
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -159,7 +122,4 @@ td:last-child {
 ::-webkit-scrollbar-thumb {
   background: #e5e5e5;
   border-radius: 30px;
-}
-.api-description-td {
-  color: #555;
 }
