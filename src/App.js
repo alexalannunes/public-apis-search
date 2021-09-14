@@ -35,7 +35,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div>
+      <div style={{ maxWidth: 1400, margin: "0 auto" }}>
         <Side />
         <Content />
       </div>
